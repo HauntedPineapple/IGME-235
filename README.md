@@ -4,6 +4,4 @@
 ## Links
 * [Web Page](https://people.rit.edu/aam6039/235/)
 * [235 Shared](https://github.com/tonethar/IGME-235-Shared)
-* []()
-* []()
 <!-- * []() -->
