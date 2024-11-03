@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Events-1</title>
+  <style>
+    button {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 2em;
+    }
+
+    div {
+      font-size: 2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="first">Click Me!</button>
+  <script>
+    "use strict";
+    let a = document.querySelector("#first");
+
+    // 1 - the onclick event handler now has a function expression as its value
+    a.onclick = function (e) {
+      // 2 - the keyword 'this' in this context means the object that triggered the event
+      this.innerHTML = "I was clicked!";
+
+      // 3 - will do the same thing
+      //e.target.innerHTML = "I was clicked!";
+    }
+  </script>
+  <!--=======================================================================-->
+  <hr>
+  <button id="second">And Me!</button>
+  <button id="third">Me Too!</button>
+  <script>
+    "use strict";
+    let b = document.querySelector("#second");
+    b.onclick = function (e) {
+      // 1 - the keyword 'this' in this context means the object that triggered the event
+      this.innerHTML = "I was clicked too!";
+
+      // 2 - will do the same thing
+      //e.target.innerHTML = "I was clicked!";
+    }
+
+    // 3 - Let's declare a function to be called later
+    function buttonClicked() {
+      this.innerHTML = "Yay, I was clicked!";
+    }
+
+    // 4 - .onclick now points at the divClicked() function
+    document.querySelector("#third").onclick = buttonClicked;
+  </script>
+  <!--=======================================================================-->
+  <hr>
+  <button id="fourth">Paragraphs!</button>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    Asperiores fuga distinctio harum molestias vitae laborum!</p>
+
+  <script>
+    "use strict";
+
+    function changeParagraph() {
+      document.querySelector("p:nth-of-type(1)").innerHTML = "Somebody changed me!";
+    }
+
+    // 2 - Let's declare an arrow function to be called later
+    let cClicked = (e) => {
+      e.target.innerHTML = "Wowie!";
+      this.changeParagraph(); // `this` is the window object, not the button that was clicked
+    }
+
+    // 3 - .onclick now points at the divClicked arrow function
+    let c = document.querySelector("#fourth").onclick = cClicked;
+  </script>
+  <!--=========================EVENT LISTENERS!!!============================-->
+  <hr>
+  <p>The FitnessGram PACER Test is a multistage aerobic capacity test that progressively gets more difficult as it
+    continues.</p>
+  <div>The test is used to measure a student's aerobic capacity as part of the FitnessGram assessment.</div>
+  <script>
+    "use strict";
+    // 1 - Let's declare 3 arrow functions that can be called later
+    let changeText = (e) => { e.target.innerHTML = "I was clicked!"; };
+    let changeColor = (e) => { e.target.style.color = "red"; };
+    let changeStyle = (e) => { e.target.style.fontStyle = "italic"; };
+
+
+    // 2 - get references to the <p> and the <div>
+    let p = document.querySelector("p:nth-of-type(2)");
+    let div = document.querySelector("div");
+
+    // 3 - use addEventListener() to add three events to the <p>
+    p.addEventListener("click", changeText); // NOTE the event is named 'click', NOT 'onclick'
+    p.addEventListener("click", changeColor);
+    p.addEventListener("click", changeStyle); // now three functions will be called when `p` is clicked
+
+    // 4 - we will only give the <div> two events
+    div.addEventListener("click", changeText);
+    div.addEventListener("click", changeColor);
+
+  </script>
+  <!--=======================================================================-->
+  <hr>
+  <button id="fifth">Five!</button>
+  
+  <!--=======================================================================-->
+  <hr>
+  <button id="sixth">Six!</button>
+  <!--=======================================================================-->
+  <hr>
+  <button id="seventh">Seven!</button>
+</body>
+
+</html>

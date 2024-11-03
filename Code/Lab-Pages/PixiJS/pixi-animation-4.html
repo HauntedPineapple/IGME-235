@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Pixi Animation 4</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.3/pixi.min.js"></script>
+    <script src="js/classes.js"></script>
+</head>
+
+<body>
+    <script>
+
+        // #1 - Script scoped variables
+        const app = new PIXI.Application(
+            {
+                width: 600,
+                height: 400
+            }
+        );
+        document.body.appendChild(app.view);
+
+        const screenWidth = app.view.width;
+        const screenHeight = app.view.height;
+        const circles = [];
+
+        // #3 - get this app started!
+        createCircles();
+
+        // #2 - make some circles
+        function createCircles() {
+            // red circles
+            for (let i = 0; i < 5; i++) {
+                let c = new Circle()
+                c.x = Math.random() * (screenWidth - 100) + 50;
+                c.y = Math.random() * (screenHeight - 100) + 50;
+                circles.push(c);
+                app.stage.addChild(c);
+            }
+
+            // yellow circles
+            for (let i = 0; i < 10; i++) {
+                let c = new Circle(10, 0xFFFF00);
+                c.x = Math.random() * (screenWidth - 100) + 50;
+                c.y = Math.random() * (screenHeight - 100) + 50;
+                app.stage.addChild(c);
+                circles.push(c);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

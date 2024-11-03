@@ -1,0 +1,356 @@
+/*#region fonts*/
+
+@font-face {
+    font-family: 'miriam_libre';
+    src: url('../assets/webfonts/miriamlibre-regular-demo.html') format('woff2'), url('../assets/webfonts/miriamlibre-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt_sans';
+    src: url('../assets/webfonts/ptsans-regular-webfont.woff2') format('woff2'), url('../assets/webfonts/ptsans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pt_sans_narrow';
+    src: url('../assets/webfonts/ptsansnarrow-regular-webfont.woff2') format('woff2'), url('../assets/webfonts/ptsansnarrow-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source_sans_pro';
+    src: url('../assets/webfonts/sourcesanspro-regular-webfont.woff2') format('woff2'), url('../assets/webfonts/sourcesanspro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*#endregion*/
+
+body {
+    background-color: #fff8e8;
+    font-family: "pt_sans_narrow", sans-serif;
+    font-size: 1.5rem;
+}
+
+main {
+    margin-top: 3.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "pt_sans", sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+code {
+    font-family: "miriam_libre", monospace;
+    font-size: 14px;
+}
+
+header {
+    background-color: #d52941;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header img {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+
+header h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+nav ul.menu {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul.menu a {
+    color: #000000;
+    font-family: "pt_sans", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    padding: 18px 10px;
+}
+
+nav ul.menu a:hover {
+    background-color: #dddddd;
+    font-size: 1.6rem;
+    color: #000000;
+}
+
+#heroImage {
+    position: relative;
+    margin: 0;
+}
+
+#heroImage img {
+    z-index: -1;
+    height: 50%;
+    width: 100%;
+}
+
+#heroImage #tagline h2 {
+    position: absolute;
+    font-size: 5rem;
+    color: #ffffff;
+    text-shadow: 0.1em 0.1em 0.1em #494e57;
+    z-index: 1;
+    bottom: .5em;
+    left: 1.5em;
+}
+
+#aboutMe {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0.5rem 1rem;
+    padding-bottom: 0.5em;
+    border-bottom: solid;
+}
+
+#aboutMe p {
+    box-sizing: border-box;
+    margin: 0.5rem;
+    max-width: 400px;
+    padding: 30px 15px;
+    border: double;
+    background-color: #F9FBDB;
+}
+
+#aboutMe img {
+    margin: 0.25rem .15rem;
+    max-width: 400px;
+    border: solid;
+}
+
+.workGrid {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(2, 0.5fr);
+    justify-content: space-between;
+    justify-items: center;
+}
+
+.workGridItem {
+    margin: 8px 10px;
+    padding: 10px;
+    background-color: #f8eaca;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    /* box-shadow: 2px 4px 10px #d1d1d17a; */
+}
+
+.workGridItem h4 {
+    margin: 8px 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.workGridItem a {
+    color: black
+}
+
+.workGridItem a:hover {
+    font-weight: bold;
+}
+
+.workGridItem p {
+    margin: 0.25em .5em;
+    width: 500px;
+    text-align: center;
+}
+
+.workGridItem img {
+    padding-top: 5px;
+    margin: auto;
+    width: 500px;
+}
+
+.thirdPiece {
+    grid-column: 1/3;
+}
+
+#gallery{
+    background-color: #fff8e8;
+}
+
+#gallery img{
+    max-width: 700px;
+}
+
+footer {
+    clear: both;
+    background-color: #ffeedf;
+    border: double;
+    padding: 0.25rem;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+footer a:link {
+    color: #d03025;
+}
+
+footer a:visited {
+    color: #6e353d;
+}
+
+footer a:hover {
+    color: #65889F;
+}
+
+footer #contactInfo {
+    padding-left: 10px;
+}
+
+footer #contactInfo li {
+    text-align: left;
+    list-style: none;
+    line-height: 2em;
+}
+
+footer #contactLinks {
+    margin: auto 0;
+    padding-right: 10px;
+}
+
+footer #contactLinks li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    text-align: right;
+    list-style: none;
+    text-decoration: none;
+    line-height: 2em;
+}
+
+@media screen and (min-width: 1800px) {
+    /*when the width gets larger than #px */
+    .workGrid {
+        grid-template-rows: auto;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+    }
+    .workGridItem p {
+        width: 400px;
+    }
+    .workGridItem img {
+        width: 300px;
+    }
+    #stringFigures {
+        grid-column: 1/2;
+    }
+    #stringFigureVideo {
+        width: 800px;
+        height: 450px;
+    }
+    #projectError {
+        grid-column: 3/4;
+    }
+    .thirdPiece {
+        align-self: center;
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    /* when the width gets smaller than #px */
+    #heroImage #tagline h2 {
+        font-size: 3rem;
+    }
+    header {
+        grid-template-rows: 60px;
+        grid-template-columns: 65px 200px 1fr 200px;
+    }
+    .workGrid {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+    }
+    .workGridItem p {
+        margin: 0.25em auto;
+        width: 75vw;
+    }
+    .workGridItem img {
+        display: grid;
+        margin: 0.25em auto;
+        width: 75vw;
+        align-self: center;
+    }
+    .thirdPiece {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /* when the width gets smaller than #px */
+    header {
+        grid-template-rows: 60px;
+        grid-template-columns: 65px 70px 200px;
+    }
+    nav {
+        grid-column: 3 / span1;
+    }
+    nav ul.menu {
+        justify-content: center;
+    }
+    nav ul.menu a {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        box-sizing: border-box;
+        padding: 23px 8px;
+    }
+    main {
+        margin-top: 150px;
+    }
+    #heroImage #tagline h2 {
+        font-size: 2.5rem;
+        bottom: .25em;
+        left: 1.5em;
+    }
+    #aboutMe p {
+        padding: 15px 10px;
+    }
+    .workGrid {
+        grid-template-rows: repeat(3, auto);
+    }
+    #stringFigureVideo {
+        width: 400px;
+        height: 225px;
+    }
+}

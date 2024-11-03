@@ -1,0 +1,39 @@
+h2, h3, h4, h5, h6 {
+    clear: right;
+    border-bottom: 3px solid red;
+}
+
+footer {
+    clear: left;
+}
+
+figure {
+    float: right;
+    max-width: 650px;
+}
+
+figure>img {
+    width: 100%;
+}
+
+.tet {
+    clear: left;
+    margin: 5px;
+    float: left;
+    width: 40%;
+}
+
+.tet>img {
+    float: right;
+    padding: .5em;
+    width: 50%;
+}
+
+.name {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.aliases {
+    padding: 5px 0;
+}

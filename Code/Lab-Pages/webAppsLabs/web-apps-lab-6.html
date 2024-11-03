@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Web Apps-3-HW</title>
+    <style>
+        body {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Favorites</h1>
+    <!-- <h2>My Favorite Music</h2>
+
+    <ol id="musicList">
+    </ol>
+
+    <h2>My Favorite Games</h2>
+
+    <ol id="gamesList">
+    </ol> -->
+
+    <h2>My Favorite Links</h2>
+
+    <ol id="linksList">
+    </ol>
+
+    <script>
+        "use strict";
+        // let music = ["My Chemical Romance",
+        //             "Crown the Empire",
+        //             "August Burns Red",
+        //             "The Amity Affliction",
+        //             "Sabaton"]
+        // let games = ["Dishonored",
+        //             "Bioshock Infinite",
+        //             "Pokemon",
+        //             "Minecraft",
+        //             "Monster Hunter World"];
+
+        let links = {
+            "Staggering Beauty": "http://www.staggeringbeauty.com/",
+            "The Scale of The Universe": "https://htwins.net/scale2/",
+            "Zoom Quilt": "http://www.zoomquilt.org/"
+        }
+
+        // let firstList = document.getElementById("musicList");
+        // for(let i=0; i<music.length; i++){
+        //     let musicItem = document.createElement("li");
+        //     musicItem.innerHTML = music[i];
+        //     firstList.appendChild(musicItem);
+        // }
+
+        // let secondList = document.getElementById("gamesList");
+        // let name = "";
+        // for(name of games){
+        //     let gamesItem = document.createElement("li");
+        //     gamesItem.innerHTML = name;
+        //     secondList.appendChild(gamesItem);
+        // }
+
+        let thirdList = document.getElementById("linksList");
+        let key;
+        for(key in links){
+            let linksItem = document.createElement("li");
+            let anchor = document.createElement("a");
+            anchor.setAttribute("href",links[key]);
+            let textNode = document.createTextNode(key);
+            anchor.appendChild(textNode);
+            linksItem.appendChild(anchor);
+            thirdList.appendChild(linksItem);
+        }
+        </script>
+</body>
+</html>

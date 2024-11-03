@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Functions-4</title>
+</head>
+
+<body>
+
+    <script>
+        "use strict";
+        /*Both functions and variables that are declared using either let or const, 
+        are scoped to the current block they were declared in.
+
+        A Block is delimited by a pair of curly braces {} and is used to group zero or more statements.
+
+        Scope means where your variable is accessible and modifiable in your program.
+
+        Functions and variables declared by let and const have as their scope 
+        the block in which they are defined, as well as in any contained sub-blocks.
+
+        If a variable is declared with let and const outside of a block 
+        (at the top-level of the <script> element) it has script scope. 
+
+        Script scope means that the variable is available throughout the current script, 
+        and in other <script> tags.
+        */
+
+        // #1 - a & b here are in "script scope" because they are declared outside of a block
+        let A = "A";
+        let B = "B";
+
+
+        // #2 a function 
+        function func1() {
+            let A = "AA"; // A scoped to this function's block masks the "script scoped" A
+            console.log(`INSIDE func1() A equals ${A}`); // "AA"
+            console.log(`INSIDE func1() B equals ${B}`); // "B" - "script scoped" b is visible
+            B = "BB"; // change value of "script scoped" B
+            let C = "C"; // declare a block-scoped C variable
+            debugger; // debugger breakpoint
+        }
+
+        func1(); // call func1()
+        console.log(`OUTSIDE func1() A equals ${A}`); // "A" - A is in scope
+
+        console.log(`OUTSIDE func1() B equals ${B}`); // "BB" -  B is in scope
+
+        //console.log(`OUTSIDE func1() C equals ${C}`); // reference error! C is not defined
+
+        debugger; // debugger breakpoint
+
+
+        /*The "debugger;"" statement will suspend execution of the program and
+        allow us to inspect both the value of the variables, and their scope.
+        Note that we have 3 scopes here: "Local", "Script", and "Global".
+
+        func1() has 2 "locally" scoped variables (i.e. to the function block) - A and C.
+        A and B are "script" scoped and are thus visible throughout this page and other scripts of the page.
+        There are 2 A variables here - one in script scope, the other in local scope. 
+        The locally scoped A in func1() will "mask" the script scoped A within func1().
+        There are many globally scoped objects - alerts, arrays, the Math object, and so on. 
+        Functions that we create at the top level with the function keyword are also in the global scope.
+        Our scripts have full access to these and other global variables.
+        
+        Try this: Remove the debugger; statements and uncomment the final console.log() 
+        that tries to print out C. Of course it fails because we can't access local variables 
+        from outside the block in which they were declared in.*/
+    </script>
+</body>
+
+</html>
